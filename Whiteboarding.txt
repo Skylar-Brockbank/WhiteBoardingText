@@ -1,0 +1,33 @@
+Question #1: Turning Strings to URLs
+URLs cannot have spaces. Instead, all spaces in a string are replaced with %20. Write an algorithm that replaces all spaces in a string with %20.
+
+You may not use the replace() method or regular expressions to solve this problem. Solve the problem with and without recursion.
+
+Example
+Input: "Jasmine Ann Jones"
+
+Output: "Jasmine%20Ann%20Jones"
+
+
+without recursion
+==================================
+
+const urlFormatter = input => {returns input.split(" ").join("%20")};
+
+with recursion
+==================================
+
+cont urlFormatter = (input) =>{
+	
+	const loop = (counter) =>{
+		if(counter===input.length){
+			return "";
+		}
+		if(input[count] === " "){
+			return "%20"+loop(counter+1);
+		}else{
+			return input[counter]+loop(counter+1);
+		}
+	}
+	return loop(0);
+}
